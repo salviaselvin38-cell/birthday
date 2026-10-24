@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sarvesh Anand 💖 | With Love, Sal</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Outfit"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            hand: ['"Caveat"', 'cursive'],
+          },
+          colors: {
+            cotton: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              300: '#fda4af',
+              400: '#fb7185',
+              500: '#f43f5e',
+              600: '#e11d48',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Candle flicker */
+    @keyframes flameFlicker {
+      0%, 100% { transform: scale(1) rotate(-1.5deg); opacity: 0.95; filter: drop-shadow(0 0 10px #f59e0b); }
+      25% { transform: scale(1.15, 1.25) rotate(2deg); opacity: 1; filter: drop-shadow(0 0 16px #fbbf24); }
+      50% { transform: scale(0.92, 0.96) rotate(-2deg); opacity: 0.9; }
+      75% { transform: scale(1.08, 1.05) rotate(1.5deg); opacity: 0.98; }
+    }
+
+    @keyframes smokeRise {
+      0% { opacity: 0.9; transform: translateY(0) scale(0.8); }
+      50% { opacity: 0.5; transform: translateY(-28px) translateX(6px) scale(1.3); }
+      100% { opacity: 0; transform: translateY(-56px) translateX(-10px) scale(2); }
+    }
+
+    @keyframes floatHearts {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      15% { opacity: 0.75; }
+      85% { opacity: 0.75; }
+      100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
+    }
+
+    .flame-active {
+      animation: flameFlicker 1.25s ease-in-out infinite alternate;
+      transform-origin: bottom center;
+    }
+
+    .smoke-puff {
+      animation: smokeRise 1.3s forwards ease-out;
+    }
+
+    .heart-bubble {
+      position: absolute;
+      animation: floatHearts 14s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Soft Romantic Glassmorphic cards */
+    .pink-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(254, 205, 211, 0.85);
+      box-shadow: 0 12px 35px -6px rgba(251, 113, 133, 0.18);
+    }
+
+    .pink-glass-accent {
+      background: rgba(255, 241, 242, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(251, 113, 133, 0.4);
+      box-shadow: 0 12px 30px -6px rgba(244, 63, 94, 0.15);
+    }
+
+    .polaroid-card {
+      transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .polaroid-card:hover {
+      transform: translateY(-10px) scale(1.03) rotate(0deg) !important;
+      z-index: 25;
+      box-shadow: 0 25px 40px -8px rgba(244, 63, 94, 0.3);
+    }
+
+    .washi-tape {
+      background-color: rgba(254, 226, 226, 0.9);
+      border-left: 2px dashed rgba(244, 63, 94, 0.45);
+      border-right: 2px dashed rgba(244, 63, 94, 0.45);
+    }
+
+    /* Airplane route flight pulse */
+    @keyframes planeGlide {
+      0% { left: 5%; }
+      50% { left: 88%; transform: translateY(-5px) scaleX(1); }
+      51% { transform: translateY(-5px) scaleX(-1); }
+      99% { left: 5%; transform: translateY(0px) scaleX(-1); }
+      100% { left: 5%; transform: translateY(0px) scaleX(1); }
+    }
+
+    .plane-moving {
+      position: absolute;
+      animation: planeGlide 11s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-b from-[#fff1f3] via-[#ffe4e9] to-[#fff0f4] text-slate-800 font-sans selection:bg-rose-400 selection:text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Floating Hearts Background Container -->
+  <div id="heartsContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-0"></div>
+
+  <!-- Ambient Blurred Glow Elements -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-28 -left-28 w-96 h-96 bg-rose-200/50 rounded-full blur-[130px]"></div>
+    <div class="absolute top-1/2 -right-36 w-[32rem] h-[32rem] bg-pink-200/60 rounded-full blur-[150px]"></div>
+    <div class="absolute -bottom-32 left-1/3 w-[28rem] h-[28rem] bg-amber-100/70 rounded-full blur-[130px]"></div>
+  </div>
+
+  <!-- Top Sticky Navigation & Controls -->
+  <header class="fixed top-3 inset-x-0 max-w-4xl mx-auto px-4 z-40 flex items-center justify-between pointer-events-none">
+    <div class="pointer-events-auto">
+      <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full pink-glass text-rose-600 text-xs sm:text-sm font-semibold shadow-sm">
+        <span class="animate-pulse">🌸</span>
+        <span class="font-script text-xl text-rose-500">Salvia & Sarvesh</span>
+      </span>
+    </div>
+
+    <div class="flex items-center gap-2.5 pointer-events-auto">
+      <!-- Music Box Button -->
+      <button id="musicToggleBtn" onclick="toggleMusicBox()" title="Play Birthday Song for Sarvesh"
+        class="pink-glass hover:bg-rose-100/90 text-rose-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-full flex items-center gap-2 shadow-md transition-all active:scale-95 border border-rose-200">
+        <i id="musicIcon" class="fa-solid fa-music text-rose-500"></i>
+        <span id="musicText">Birthday Melody</span>
+        <div id="audioVisualizer" class="hidden items-end gap-0.5 h-3">
+          <span class="w-1 bg-rose-400 h-2 animate-bounce"></span>
+          <span class="w-1 bg-pink-500 h-3 animate-pulse"></span>
+          <span class="w-1 bg-amber-400 h-1.5 animate-bounce"></span>
+        </div>
+      </button>
+
+      <!-- Confetti Shower Button -->
+      <button onclick="launchConfettiBurst()" title="Shower Confetti"
+        class="bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 text-white font-bold p-2.5 sm:px-4 sm:py-2 rounded-full shadow-md shadow-rose-300/40 hover:opacity-95 active:scale-95 transition text-xs sm:text-sm flex items-center gap-1.5">
+        <span>🎉</span>
+        <span class="hidden sm:inline">Shower Love</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Realtime Floating Song Lyrics Toast -->
+  <div id="lyricsToast" class="fixed top-16 left-1/2 -translate-x-1/2 z-50 hidden px-6 py-2 rounded-full pink-glass-accent border border-rose-300 text-rose-700 font-hand text-xl text-center shadow-lg transition-all">
+    🎵 "Happy Birthday dear Sarvesh... my favorite human!"
+  </div>
+
+  <!-- Main Content Layout -->
+  <main class="relative z-10 max-w-4xl mx-auto px-4 pt-20 pb-24 space-y-20">
+
+    <!-- HERO SECTION: TO MY LOVABLE HUMAN -->
+    <section class="text-center pt-4 sm:pt-8 flex flex-col items-center">
+      
+      <!-- Long-Distance Route Pill -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/90 border border-rose-300/70 text-rose-600 text-xs tracking-wider uppercase mb-4 font-bold shadow-sm">
+        <span>💌 Kanniyakumari 🌊 &nbsp;⇄&nbsp; 🏙️ Chennai</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold text-slate-800 mb-2 leading-tight">
+        Happy Birthday, <br class="sm:hidden">
+        <span class="bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 bg-clip-text text-transparent">
+          Sarvesh Anand!
+        </span> 🎂
+      </h1>
+
+      <p class="font-script text-3xl sm:text-4xl text-rose-500 mb-6">
+        To my lovable human & best friend...
+      </p>
+
+      <!-- VERBATIM DEDICATION LETTER FROM USER -->
+      <div class="pink-glass rounded-3xl p-6 sm:p-10 max-w-2xl w-full text-center relative border-2 border-rose-200 shadow-xl overflow-hidden mb-12">
+        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-5 py-1 washi-tape rounded text-rose-600 text-sm font-hand font-bold shadow-sm">
+          A Letter For You
+        </div>
+
+        <div class="text-4xl text-rose-400 mb-2 mt-2 leading-none">“</div>
+        <p class="font-serif text-slate-700 text-base sm:text-xl italic leading-relaxed px-2 sm:px-6">
+          Sarvesh , birthdays come once a year, but a friend like you is a once-in-a-lifetime blessing. Thank you for always listening, for matching my chaotic energy, and for making 700+ kilometers feel like we're just sitting on the same front porch. Keep being the incredible, ambitious, hilarious human you are.  I am luckier to call you my best friend.
+        </p>
+        <div class="text-4xl text-rose-400 mt-2 leading-none">”</div>
+
+        <div class="mt-6 pt-5 border-t border-rose-200/80 flex flex-col items-center">
+          <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">With love, pride & endless wishes from</span>
+          <span class="font-script text-3xl sm:text-4xl text-rose-600 mt-1">Salvia  placid (Sal)</span>
+          <span class="text-xs text-rose-400 font-medium mt-0.5">Kanniyakumari 🌊</span>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE BIRTHDAY CAKE & WISH MAKER -->
+      <div class="pink-glass rounded-3xl p-6 sm:p-8 max-w-md w-full text-center relative border border-rose-300/80 shadow-lg">
+        <div class="text-xs uppercase tracking-widest text-rose-500 font-bold mb-1">
+          Make a Birthday Wish, Sarvesh!
+        </div>
+        <p class="text-xs text-slate-500 mb-4">Tap each candle or blow them all out together</p>
+
+        <!-- The Cake -->
+        <div class="relative h-48 flex flex-col justify-end items-center select-none py-2">
+          
+          <!-- Candles Row -->
+          <div class="flex justify-center items-end gap-7 mb-1 z-20">
+            <!-- Candle 1 -->
+            <div class="candle flex flex-col items-center cursor-pointer group" onclick="blowIndividualCandle(0)" title="Click to blow!">
+              <div id="smoke-0" class="hidden text-slate-400 text-xs -mb-2 pointer-events-none">💨</div>
+              <div id="flame-0" class="flame-active w-3.5 h-6 bg-gradient-to-t from-amber-500 via-yellow-300 to-white rounded-full shadow-[0_0_15px_#f59e0b] transition-all"></div>
+              <div class="w-1.5 h-11 bg-gradient-to-b from-rose-200 to-pink-300 rounded-sm shadow-inner mt-0.5 border border-pink-400/40"></div>
+            </div>
+
+            <!-- Candle 2 (Center) -->
+            <div class="candle flex flex-col items-center cursor-pointer group" onclick="blowIndividualCandle(1)" title="Click to blow!">
+              <div id="smoke-1" class="hidden text-slate-400 text-xs -mb-2 pointer-events-none">💨</div>
+              <div id="flame-1" class="flame-active w-4 h-7 bg-gradient-to-t from-amber-500 via-yellow-300 to-white rounded-full shadow-[0_0_18px_#fbbf24] transition-all"></div>
+              <div class="w-2 h-14 bg-gradient-to-b from-amber-100 to-yellow-300 rounded-sm shadow-inner mt-0.5 border border-amber-400/40"></div>
+            </div>
+
+            <!-- Candle 3 -->
+            <div class="candle flex flex-col items-center cursor-pointer group" onclick="blowIndividualCandle(2)" title="Click to blow!">
+              <div id="smoke-2" class="hidden text-slate-400 text-xs -mb-2 pointer-events-none">💨</div>
+              <div id="flame-2" class="flame-active w-3.5 h-6 bg-gradient-to-t from-amber-500 via-yellow-300 to-white rounded-full shadow-[0_0_15px_#f59e0b] transition-all"></div>
+              <div class="w-1.5 h-11 bg-gradient-to-b from-rose-200 to-pink-300 rounded-sm shadow-inner mt-0.5 border border-pink-400/40"></div>
+            </div>
+          </div>
+
+          <!-- Cake Tier Top -->
+          <div class="w-36 h-11 bg-gradient-to-r from-pink-300 via-rose-200 to-pink-300 rounded-t-2xl shadow-md border-t-2 border-white flex items-center justify-center relative overflow-hidden">
+            <div class="w-full h-3 bg-white/60 rounded-full mx-1"></div>
+            <div class="absolute bottom-0 inset-x-0 flex justify-around">
+              <span class="w-2.5 h-2 bg-pink-100 rounded-b-full"></span>
+              <span class="w-3 h-3 bg-pink-100 rounded-b-full"></span>
+              <span class="w-2 h-2.5 bg-pink-100 rounded-b-full"></span>
+              <span class="w-3 h-3 bg-pink-100 rounded-b-full"></span>
+            </div>
+          </div>
+
+          <!-- Cake Tier Bottom -->
+          <div class="w-56 h-16 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 rounded-b-2xl shadow-xl flex items-center justify-center border-t-2 border-rose-200 relative">
+            <span class="font-script text-3xl text-white font-bold tracking-wide drop-shadow">
+              Sarvesh Anand 💖
+            </span>
+            <div class="absolute -top-1.5 left-4 w-3 h-3 bg-rose-500 rounded-full shadow-md"></div>
+            <div class="absolute -top-1.5 right-4 w-3 h-3 bg-rose-500 rounded-full shadow-md"></div>
+            <div class="absolute -top-1.5 left-1/3 w-2.5 h-2.5 bg-yellow-200 rounded-full shadow-sm"></div>
+            <div class="absolute -top-1.5 right-1/3 w-2.5 h-2.5 bg-yellow-200 rounded-full shadow-sm"></div>
+          </div>
+
+          <!-- Cake Plate -->
+          <div class="w-64 h-3.5 bg-gradient-to-r from-slate-200 via-white to-slate-200 rounded-full shadow-lg -mt-0.5 border border-pink-200"></div>
+        </div>
+
+        <p id="candleStatusMsg" class="text-xs sm:text-sm font-medium text-rose-500 mt-4 animate-pulse">
+          ✨ Make a wish and tap the candles!
+        </p>
+
+        <button id="blowCandlesBtn" onclick="blowAllCandlesAction()" 
+          class="mt-4 px-6 py-2.5 rounded-full bg-gradient-to-r from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 text-white text-xs sm:text-sm font-semibold transition hover:scale-105 active:scale-95 shadow-md shadow-rose-300/40">
+          💨 Blow Out All Candles
+        </button>
+      </div>
+    </section>
+
+    <!-- CARTOON MEMORY POLAROID WALL (UPDATED FILENAMES) -->
+    <section class="space-y-6">
+      <div class="text-center">
+        <div class="text-xs font-bold uppercase tracking-widest text-rose-500">Illustrated Memories 🎨</div>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-800 mt-1">Our Story in Cartoon</h2>
+        <p class="text-slate-500 text-sm max-w-lg mx-auto mt-1">
+          Our college study sessions, food dates, and smiling selfies illustrated into lifelong memories. (Click to zoom!)
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+        
+        <!-- Polaroid 1: Study Session (study friends.png) -->
+        <div class="polaroid-card bg-white p-4 pb-6 rounded-2xl shadow-xl shadow-rose-200/50 transform -rotate-3 relative border border-rose-100 flex flex-col justify-between cursor-pointer"
+             onclick="openLightbox('study friends.png', 'Shared Earphones & Tablet Notes 🎧', 'KMCH College • Late night revisions & shared playlists')">
+          <div class="washi-tape w-28 h-6 absolute -top-3 left-1/2 -translate-x-1/2 rotate-1 z-10 rounded-sm"></div>
+          
+          <div class="aspect-[4/3] rounded-lg overflow-hidden bg-rose-50 relative border border-slate-100 group">
+            <img src="study friends.png" 
+                 onerror="this.onerror=null; this.src='1792797311030.png'; this.onerror=function(){this.src='1000158739.jpg';};" 
+                 alt="Sarvesh & Sal Studying Together"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-rose-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="p-2 rounded-full bg-white/90 text-rose-600 text-xs font-bold shadow-md">🔍 Zoom</span>
+            </div>
+          </div>
+          
+          <div class="mt-4 text-center">
+            <h3 class="font-hand text-2xl font-bold text-slate-800 leading-tight">Study Sessions & Shared Earphones 🎧</h3>
+            <p class="text-xs text-rose-600 font-medium mt-1">KMCH College • Surviving syllabus together</p>
+            <p class="text-[11px] text-slate-400 mt-1 italic">"Remember when we actually pretended to study?"</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 2: Food Date (dinning friends.png) -->
+        <div class="polaroid-card bg-white p-4 pb-6 rounded-2xl shadow-xl shadow-rose-200/50 transform rotate-2 relative border border-rose-100 flex flex-col justify-between cursor-pointer"
+             onclick="openLightbox('dinning friends.png', 'The Legendary Food Dates & Parotta Craving 🍽️', 'Parotta, biryani, and pure laughs • Banana leaf feast')">
+          <div class="washi-tape w-28 h-6 absolute -top-3 left-1/2 -translate-x-1/2 -rotate-2 z-10 rounded-sm"></div>
+          
+          <div class="aspect-[4/3] rounded-lg overflow-hidden bg-rose-50 relative border border-slate-100 group">
+            <img src="dinning friends.png" 
+                 onerror="this.onerror=null; this.src='1792797305920.png'; this.onerror=function(){this.src='1000158737.jpg';};" 
+                 alt="Sarvesh Eating Parotta with Sal"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-rose-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="p-2 rounded-full bg-white/90 text-rose-600 text-xs font-bold shadow-md">🔍 Zoom</span>
+            </div>
+          </div>
+          
+          <div class="mt-4 text-center">
+            <h3 class="font-hand text-2xl font-bold text-slate-800 leading-tight">Parotta, Biryani & Big Bites 🍽️</h3>
+            <p class="text-xs text-rose-600 font-medium mt-1">Foodie moments • Pure chaotic joy</p>
+            <p class="text-[11px] text-slate-400 mt-1 italic">"Never seen anyone look happier with food!"</p>
+          </div>
+        </div>
+
+        <!-- Polaroid 3: Selfie Smiles (happy friends.png) -->
+        <div class="polaroid-card bg-white p-4 pb-6 rounded-2xl shadow-xl shadow-rose-200/50 transform -rotate-1 relative border border-rose-100 flex flex-col justify-between cursor-pointer"
+             onclick="openLightbox('happy friends.png', 'Forever Smiling Through It All 💖', 'Salvia & Sarvesh • Unstoppable smiles & unbreakable bond')">
+          <div class="washi-tape w-28 h-6 absolute -top-3 left-1/2 -translate-x-1/2 rotate-2 z-10 rounded-sm"></div>
+          
+          <div class="aspect-[4/3] rounded-lg overflow-hidden bg-rose-50 relative border border-slate-100 group">
+            <img src="happy friends.png" 
+                 onerror="this.onerror=null; this.src='1792797300885.png'; this.onerror=function(){this.src='1000158738.jpg';};" 
+                 alt="Sarvesh and Sal Selfie in Uniform"
+                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+            <div class="absolute inset-0 bg-rose-900/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="p-2 rounded-full bg-white/90 text-rose-600 text-xs font-bold shadow-md">🔍 Zoom</span>
+            </div>
+          </div>
+          
+          <div class="mt-4 text-center">
+            <h3 class="font-hand text-2xl font-bold text-slate-800 leading-tight">The Best Duo in Uniform 💙</h3>
+            <p class="text-xs text-rose-600 font-medium mt-1">Salvia & Sarvesh • Unstoppable smiles</p>
+            <p class="text-[11px] text-slate-400 mt-1 italic">"Partners in crime forever and always."</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OUR TWO WORLDS: KANNIYAKUMARI ⇄ CHENNAI -->
+    <section class="space-y-6">
+      <div class="text-center">
+        <div class="text-xs font-bold uppercase tracking-widest text-rose-500">Across Tamil Nadu 🌏</div>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-800 mt-1">Kanniyakumari to Chennai</h2>
+        <p class="text-slate-500 text-sm max-w-lg mx-auto mt-1">
+          700+ kilometers apart, but synced to the exact same second in heart and time.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+        
+        <!-- Sal's City: Kanniyakumari -->
+        <div class="pink-glass p-6 rounded-3xl text-center border-rose-200 flex flex-col justify-between shadow-md">
+          <div>
+            <div class="inline-flex items-center gap-1.5 text-rose-600 text-xs font-bold uppercase tracking-wider mb-2">
+              <span>🌊</span>
+              <span>Kanniyakumari (Sal's Side)</span>
+            </div>
+            <div class="text-xs text-slate-400 mb-2">Southern Ocean Tip of India</div>
+            <div id="kkLiveClock" class="font-serif text-3xl font-extrabold text-slate-800 tracking-wide">--:--:--</div>
+            <div id="kkLiveDate" class="text-xs text-slate-400 mt-2 font-mono">IST (UTC +5:30)</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-rose-100 text-xs text-rose-500 font-hand text-lg">
+            "Sending giant waves of love from the coast! 🌊"
+          </div>
+        </div>
+
+        <!-- Center Distance Flight Tracker -->
+        <div class="pink-glass-accent p-6 rounded-3xl text-center flex flex-col items-center justify-center border-rose-300/80 shadow-md">
+          <span class="text-xs font-bold uppercase tracking-widest text-rose-500 mb-1">Statewide Connection</span>
+          <div class="text-3xl sm:text-4xl font-extrabold text-rose-600">
+            ~705 km
+          </div>
+          <div class="text-xs text-slate-500 mt-1">Direct train route & endless memories</div>
+
+          <!-- Animated Plane Flight Path -->
+          <div class="w-full relative h-10 flex items-center my-3 overflow-hidden">
+            <span class="text-xl absolute left-1">🌊</span>
+            <div class="w-full mx-8 border-b-2 border-dashed border-rose-300 relative h-0">
+              <span class="plane-moving -top-3.5 text-base">✈️</span>
+            </div>
+            <span class="text-xl absolute right-1">🏙️</span>
+          </div>
+
+          <div class="text-xs text-rose-700 font-mono bg-white/70 px-3 py-1 rounded-full border border-rose-200">
+            Friendship Latency: 0.00 ms
+          </div>
+        </div>
+
+        <!-- Sarvesh's City: Chennai -->
+        <div class="pink-glass p-6 rounded-3xl text-center border-rose-200 flex flex-col justify-between shadow-md">
+          <div>
+            <div class="inline-flex items-center gap-1.5 text-rose-600 text-xs font-bold uppercase tracking-wider mb-2">
+              <span>🏙️</span>
+              <span>Chennai (Sarvesh's Hub)</span>
+            </div>
+            <div class="text-xs text-slate-400 mb-2">Marina Breeze & Birthday Celebrations</div>
+            <div id="chennaiLiveClock" class="font-serif text-3xl font-extrabold text-slate-800 tracking-wide">--:--:--</div>
+            <div id="chennaiLiveDate" class="text-xs text-slate-400 mt-2 font-mono">IST (UTC +5:30)</div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-rose-100 text-xs text-rose-500 font-hand text-lg">
+            "Official Birthday Boy Headquarters 🎂"
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 'OPEN WHEN...' 4 LETTERS -->
+    <section class="space-y-6">
+      <div class="text-center">
+        <div class="text-xs font-bold uppercase tracking-widest text-rose-500">Sealed With Care 💌</div>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-800 mt-1">"Open When..." Letters</h2>
+        <p class="text-slate-500 text-sm max-w-lg mx-auto mt-1">
+          Four heartfelt envelopes written by Sal specifically for you, Sarvesh. Open whenever you need them.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Letter 1: Sad -->
+        <div onclick="openEnvelopeLetter(0)" class="pink-glass p-6 rounded-3xl hover:border-rose-400 transition cursor-pointer hover:-translate-y-1.5 group relative overflow-hidden border border-rose-200 shadow-md">
+          <div class="text-3xl mb-3 group-hover:scale-110 transition duration-300">🌧️</div>
+          <div class="text-[11px] font-bold text-rose-500 uppercase tracking-wider">Envelope #1</div>
+          <h3 class="font-bold text-base text-slate-800 group-hover:text-rose-600 transition mt-1">Open when you're sad</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">If today feels heavy, take a breath, drink water, and give yourself kindness.</p>
+          <div class="mt-4 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+            <span>Read Envelope</span>
+            <i class="fa-solid fa-heart text-[10px] text-rose-400 group-hover:scale-125 transition"></i>
+          </div>
+        </div>
+
+        <!-- Letter 2: Miss Me -->
+        <div onclick="openEnvelopeLetter(1)" class="pink-glass p-6 rounded-3xl hover:border-rose-400 transition cursor-pointer hover:-translate-y-1.5 group relative overflow-hidden border border-rose-200 shadow-md">
+          <div class="text-3xl mb-3 group-hover:scale-110 transition duration-300">🫂</div>
+          <div class="text-[11px] font-bold text-rose-500 uppercase tracking-wider">Envelope #2</div>
+          <h3 class="font-bold text-base text-slate-800 group-hover:text-rose-600 transition mt-1">Open when you miss me</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Chennai to Kanniyakumari isn't the biggest distance. Imagine me waving dramatically!</p>
+          <div class="mt-4 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+            <span>Read Envelope</span>
+            <i class="fa-solid fa-heart text-[10px] text-rose-400 group-hover:scale-125 transition"></i>
+          </div>
+        </div>
+
+        <!-- Letter 3: Motivation -->
+        <div onclick="openEnvelopeLetter(2)" class="pink-glass p-6 rounded-3xl hover:border-rose-400 transition cursor-pointer hover:-translate-y-1.5 group relative overflow-hidden border border-rose-200 shadow-md">
+          <div class="text-3xl mb-3 group-hover:scale-110 transition duration-300">⚡</div>
+          <div class="text-[11px] font-bold text-rose-500 uppercase tracking-wider">Envelope #3</div>
+          <h3 class="font-bold text-base text-slate-800 group-hover:text-rose-600 transition mt-1">Open when you need motivation</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Sarvesh, listen up! You've made it through difficult days before. Rooting for you!</p>
+          <div class="mt-4 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+            <span>Read Envelope</span>
+            <i class="fa-solid fa-heart text-[10px] text-rose-400 group-hover:scale-125 transition"></i>
+          </div>
+        </div>
+
+        <!-- Letter 4: Smile -->
+        <div onclick="openEnvelopeLetter(3)" class="pink-glass p-6 rounded-3xl hover:border-rose-400 transition cursor-pointer hover:-translate-y-1.5 group relative overflow-hidden border border-rose-200 shadow-md">
+          <div class="text-3xl mb-3 group-hover:scale-110 transition duration-300">😊</div>
+          <div class="text-[11px] font-bold text-rose-500 uppercase tracking-wider">Envelope #4</div>
+          <h3 class="font-bold text-base text-slate-800 group-hover:text-rose-600 transition mt-1">Open when you want to smile</h3>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">A funny reminder of our late-night talks, goofy roasts, and the best friendship memories.</p>
+          <div class="mt-4 text-xs font-semibold text-rose-600 flex items-center gap-1.5">
+            <span>Read Envelope</span>
+            <i class="fa-solid fa-heart text-[10px] text-rose-400 group-hover:scale-125 transition"></i>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FRIENDSHIP QUIZ: HOW WELL DO YOU KNOW US? 💞 -->
+    <section class="space-y-6">
+      <div class="text-center">
+        <div class="text-xs font-bold uppercase tracking-widest text-rose-500">Friendship Game 💞</div>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-800 mt-1">How Well Do You Know Us?</h2>
+        <p class="text-slate-500 text-sm max-w-lg mx-auto mt-1">
+          Three fun questions about our friendship to unlock your secret badge!
+        </p>
+      </div>
+
+      <div class="pink-glass p-6 sm:p-8 rounded-3xl max-w-xl mx-auto border-2 border-rose-200 shadow-xl relative">
+        
+        <!-- Quiz Ongoing -->
+        <div id="quizContainer">
+          <div class="flex items-center justify-between text-xs font-bold text-rose-600 uppercase tracking-wider mb-2">
+            <span id="quizQuestionCount">Question 1 of 3</span>
+            <span id="quizScoreCount">Friendship Score: 0</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="w-full bg-rose-100 h-2 rounded-full overflow-hidden mb-6">
+            <div id="quizProgressFill" class="bg-gradient-to-r from-rose-400 to-pink-500 h-full w-1/3 transition-all duration-300"></div>
+          </div>
+
+          <h3 id="quizTitle" class="text-lg sm:text-xl font-bold text-slate-800 mb-5">
+            Loading question...
+          </h3>
+
+          <div id="quizOptionsList" class="space-y-3">
+            <!-- Dynamically populated options -->
+          </div>
+
+          <div id="quizResponseBox" class="hidden mt-5 p-4 rounded-2xl text-xs sm:text-sm font-medium"></div>
+
+          <button id="quizAdvanceBtn" onclick="nextQuizStep()" class="hidden mt-5 w-full py-3 rounded-2xl bg-gradient-to-r from-rose-400 to-pink-500 hover:from-rose-500 hover:to-pink-600 font-bold text-white text-sm transition shadow-md hover:scale-[1.01] active:scale-95">
+            Next Question →
+          </button>
+        </div>
+
+        <!-- Quiz Completed State -->
+        <div id="quizCompletionScreen" class="hidden text-center py-6 space-y-4">
+          <div class="text-6xl animate-bounce">🏆</div>
+          <div class="inline-block px-3 py-1 rounded-full bg-rose-100 text-rose-600 text-xs font-bold uppercase tracking-wider">
+            Verified Best Duo: 100% Match
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-slate-800">You Know Us Best!</h3>
+          <p class="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+            Whether you admitted you're the drama king or blamed Sal, nobody understands our bond better than you, Sarvesh!
+          </p>
+
+          <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs sm:text-sm text-left space-y-2">
+            <div class="font-bold flex items-center gap-2 text-rose-600">
+              <i class="fa-solid fa-crown"></i>
+              <span>Special Note from Sal:</span>
+            </div>
+            <p class="leading-relaxed">
+              "No matter who started talking first or who is more dramatic (spoiler: it's 100% you 😂), you're the greatest friend I could ever ask for. Kanniyakumari is always sending love to Chennai's best guy!"
+            </p>
+          </div>
+
+          <button onclick="launchConfettiBurst()" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 text-white font-bold text-xs sm:text-sm shadow-md hover:scale-105 active:scale-95 transition">
+            Celebrate Our Friendship 🎊
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECRET BIRTHDAY SURPRISE SCRATCH-OFF CARD 🎁 -->
+    <section class="space-y-6">
+      <div class="text-center">
+        <div class="text-xs font-bold uppercase tracking-widest text-rose-500">Secret Birthday Gift 🎁</div>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-slate-800 mt-1">Scratch-to-Reveal Surprise Card</h2>
+        <p class="text-slate-500 text-sm max-w-lg mx-auto mt-1">
+          Scratch off the golden-pink foil using your finger or mouse to reveal your special birthday voucher!
+        </p>
+      </div>
+
+      <div class="relative max-w-md mx-auto rounded-3xl overflow-hidden pink-glass border-2 border-rose-300 shadow-xl min-h-[220px]">
+        
+        <!-- Hidden Voucher Beneath -->
+        <div class="p-6 sm:p-8 text-center bg-gradient-to-br from-[#fff1f2] via-[#ffe4e6] to-[#fecdd3] select-none">
+          <div class="inline-block px-3 py-1 rounded-full bg-white/80 text-rose-600 border border-rose-300 text-[11px] font-bold uppercase tracking-wider mb-2 shadow-sm">
+            🎟️ Official Friendship Voucher
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-extrabold text-slate-800 mb-2">
+            Unlimited Biryani & Hangout Treat!
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm mx-auto mb-4">
+            This voucher grants Sarvesh Anand a full meal feast (Chennai Biryani or beachside treat) fully sponsored by Sal!
+          </p>
+          
+          <div class="bg-white/80 rounded-2xl p-4 border border-rose-200 max-w-sm mx-auto text-left space-y-1.5 text-xs text-slate-700 shadow-sm">
+            <div class="flex justify-between"><span class="text-slate-500">Recipient:</span> <span class="font-bold text-rose-600">Sarvesh Anand</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Issued By:</span> <span class="font-bold text-rose-600">Salvia Placid (Sal)</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Redeemable:</span> <span class="text-amber-600 font-semibold">Whenever we meet in Chennai/Kanniyakumari</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Validity:</span> <span class="text-emerald-600 font-bold">Lifetime Guarantee</span></div>
+          </div>
+        </div>
+
+        <!-- Scratch Canvas Layer -->
+        <canvas id="scratchCanvasSurface" class="absolute inset-0 w-full h-full z-20 cursor-crosshair"></canvas>
+      </div>
+      <p class="text-center text-xs text-slate-400">
+        💡 Scratch at least 45% of the card to reveal the full voucher!
+      </p>
+    </section>
+
+    <!-- CLOSING LOVE NOTE FROM SAL -->
+    <section class="pink-glass p-8 sm:p-12 rounded-3xl text-center max-w-2xl mx-auto border-2 border-rose-200 space-y-5 shadow-xl">
+      <div class="text-5xl animate-bounce">💖</div>
+      <h2 class="font-serif text-3xl font-bold text-slate-800">Happy Birthday, Sarvesh!</h2>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed font-light">
+        "Distance means so little when someone means so much. Thank you for being my constant support, my study partner, my foodie companion, and my greatest cheerleader. May this year bring you all the success, happiness, and peace you deserve."
+      </p>
+      <div class="pt-2">
+        <span class="font-script text-4xl text-rose-500">Salvia Placid</span>
+        <div class="text-xs text-rose-400 font-semibold tracking-wider mt-1 uppercase">With Endless Love & Pride • Kanniyakumari</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL FOR POLAROID PHOTOS -->
+  <div id="imageLightboxModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
+    <div class="relative max-w-2xl w-full bg-white p-4 pb-6 rounded-3xl shadow-2xl border border-rose-200" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute -top-3 -right-3 w-9 h-9 rounded-full bg-white text-slate-700 shadow-lg flex items-center justify-center hover:bg-rose-50 transition border border-rose-200 font-bold text-sm">
+        ✕
+      </button>
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+        <img id="lightboxImg" src="" alt="Enlarged Memory" class="w-full h-full object-contain">
+      </div>
+      <div class="mt-4 text-center">
+        <h4 id="lightboxTitle" class="font-serif text-xl sm:text-2xl font-bold text-slate-800"></h4>
+        <p id="lightboxSubtitle" class="text-xs sm:text-sm text-slate-500 mt-1"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP MODAL FOR 'OPEN WHEN...' LETTERS -->
+  <div id="letterReadingModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white max-w-lg w-full p-6 sm:p-8 rounded-3xl border-2 border-rose-200 shadow-2xl relative transform scale-95 transition-transform duration-300" id="letterModalContainer">
+      <!-- Close Button -->
+      <button onclick="closeEnvelopeLetter()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-rose-50 hover:bg-rose-100 text-rose-600 flex items-center justify-center transition">
+        ✕
+      </button>
+
+      <div class="text-4xl mb-2" id="letterModalEmoji">💌</div>
+      <div class="text-[11px] uppercase font-bold tracking-wider text-rose-500" id="letterModalBadge">Letter from Sal</div>
+      <h3 class="font-serif text-2xl font-bold text-slate-800 mt-1 mb-4" id="letterModalHeading">Letter Title</h3>
+      
+      <div class="text-slate-700 text-sm sm:text-base leading-relaxed space-y-3 font-normal max-h-80 overflow-y-auto pr-2" id="letterModalContent">
+        <!-- Dynamically injected -->
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-rose-100 flex justify-between items-center text-xs text-slate-400">
+        <span class="font-hand text-xl text-rose-500">Your friend, sal</span>
+        <button onclick="closeEnvelopeLetter()" class="px-4 py-2 bg-rose-50 hover:bg-rose-100 text-rose-600 rounded-xl transition border border-rose-200 font-semibold">
+          Fold Letter
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /* ==========================================================================
+       1. FLOATING HEART BUBBLE GENERATOR
+       ========================================================================== */
+    function generateFloatingHearts() {
+      const container = document.getElementById('heartsContainer');
+      const icons = ['💖', '🌸', '✨', '💕', '🌷', '🤍', '🍰'];
+      const total = 24;
+
+      for (let i = 0; i < total; i++) {
+        const item = document.createElement('div');
+        item.className = 'heart-bubble';
+        item.textContent = icons[Math.floor(Math.random() * icons.length)];
+        item.style.left = `${Math.random() * 95}%`;
+        item.style.bottom = `-${Math.random() * 20 + 5}vh`;
+        item.style.fontSize = `${Math.random() * 16 + 14}px`;
+        item.style.animationDuration = `${Math.random() * 8 + 8}s`;
+        item.style.animationDelay = `${Math.random() * 7}s`;
+        container.appendChild(item);
+      }
+    }
+
+    /* ==========================================================================
+       2. REAL-TIME CLOCKS (KANNIYAKUMARI & CHENNAI - IST)
+       ========================================================================== */
+    function refreshClocks() {
+      const now = new Date();
+      const istTime = now.toLocaleTimeString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        hour12: true,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+      const istDate = now.toLocaleDateString('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric'
+      });
+
+      const kkClock = document.getElementById('kkLiveClock');
+      const kkDate = document.getElementById('kkLiveDate');
+      const chennaiClock = document.getElementById('chennaiLiveClock');
+      const chennaiDate = document.getElementById('chennaiLiveDate');
+
+      if (kkClock) kkClock.textContent = istTime;
+      if (kkDate) kkDate.textContent = `${istDate} • Kanniyakumari`;
+      if (chennaiClock) chennaiClock.textContent = istTime;
+      if (chennaiDate) chennaiDate.textContent = `${istDate} • Chennai`;
+    }
+    setInterval(refreshClocks, 1000);
+    refreshClocks();
+
+    /* ==========================================================================
+       3. WEB AUDIO API SYNTHESIZER MUSIC BOX FOR SARVESH
+       ========================================================================== */
+    let audioCtx = null;
+    let isMelodyPlaying = false;
+
+    function getAudioCtx() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function triggerChimeSound(freq = 523.25) {
+      try {
+        const ctx = getAudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, ctx.currentTime);
+        gain.gain.setValueAtTime(0.18, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.6);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.6);
+      } catch(e) {}
+    }
+
+    const customSongNotes = [
+      { f: 261.63, d: 0.35, lyric: "Happy" },
+      { f: 261.63, d: 0.35, lyric: "Birthday" },
+      { f: 293.66, d: 0.7,  lyric: "To" },
+      { f: 261.63, d: 0.7,  lyric: "You..." },
+      { f: 349.23, d: 0.7,  lyric: "Happy" },
+      { f: 329.63, d: 1.1,  lyric: "Birthday..." },
+
+      { f: 261.63, d: 0.35, lyric: "Happy" },
+      { f: 261.63, d: 0.35, lyric: "Birthday" },
+      { f: 293.66, d: 0.7,  lyric: "To" },
+      { f: 261.63, d: 0.7,  lyric: "You..." },
+      { f: 392.00, d: 0.7,  lyric: "Dear" },
+      { f: 349.23, d: 1.1,  lyric: "Sarvesh! 💖" },
+
+      { f: 261.63, d: 0.35, lyric: "Happy" },
+      { f: 261.63, d: 0.35, lyric: "Birthday" },
+      { f: 523.25, d: 0.7,  lyric: "To" },
+      { f: 440.00, d: 0.7,  lyric: "Lovable" },
+      { f: 349.23, d: 0.7,  lyric: "Human" },
+      { f: 329.63, d: 0.7,  lyric: "Sarvesh" },
+      { f: 293.66, d: 1.0,  lyric: "Anand!" },
+
+      { f: 466.16, d: 0.35, lyric: "Happy" },
+      { f: 466.16, d: 0.35, lyric: "Birthday" },
+      { f: 440.00, d: 0.7,  lyric: "From" },
+      { f: 349.23, d: 0.7,  lyric: "Salvia" },
+      { f: 392.00, d: 0.7,  lyric: "Placid" },
+      { f: 349.23, d: 1.4,  lyric: "Forever! 🌸" }
+    ];
+
+    function scheduleTone(freq, duration, startTime) {
+      const ctx = getAudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, startTime);
+
+      gain.gain.setValueAtTime(0, startTime);
+      gain.gain.linearRampToValueAtTime(0.22, startTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration * 1.25);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(startTime);
+      osc.stop(startTime + duration * 1.25);
+    }
+
+    function toggleMusicBox() {
+      const icon = document.getElementById('musicIcon');
+      const text = document.getElementById('musicText');
+      const visualizer = document.getElementById('audioVisualizer');
+      const toast = document.getElementById('lyricsToast');
+
+      if (isMelodyPlaying) {
+        isMelodyPlaying = false;
+        icon.className = "fa-solid fa-music text-rose-500";
+        text.textContent = "Birthday Melody";
+        visualizer.classList.add('hidden');
+        visualizer.classList.remove('flex');
+        toast.classList.add('hidden');
+        return;
+      }
+
+      isMelodyPlaying = true;
+      icon.className = "fa-solid fa-volume-high text-pink-600";
+      text.textContent = "Playing...";
+      visualizer.classList.remove('hidden');
+      visualizer.classList.add('flex');
+      toast.classList.remove('hidden');
+
+      const ctx = getAudioCtx();
+      let playTime = ctx.currentTime + 0.1;
+
+      customSongNotes.forEach((note) => {
+        scheduleTone(note.f, note.d, playTime);
+        const delay = (playTime - ctx.currentTime) * 1000;
+        setTimeout(() => {
+          if (isMelodyPlaying && toast) {
+            toast.textContent = `🎶 "${note.lyric}" — Dedicated to Sarvesh 💖`;
+          }
+        }, delay);
+        playTime += note.d * 0.95;
+      });
+
+      const totalDuration = (playTime - ctx.currentTime) * 1000;
+      setTimeout(() => {
+        if (isMelodyPlaying) {
+          isMelodyPlaying = false;
+          icon.className = "fa-solid fa-music text-rose-500";
+          text.textContent = "Replay Song";
+          visualizer.classList.add('hidden');
+          visualizer.classList.remove('flex');
+          toast.classList.add('hidden');
+          launchConfettiBurst();
+        }
+      }, totalDuration);
+    }
+
+    /* ==========================================================================
+       4. CAKE & CANDLE BLOW INTERACTIONS
+       ========================================================================== */
+    const candleLitState = [true, true, true];
+
+    function blowIndividualCandle(idx) {
+      if (!candleLitState[idx]) return;
+      candleLitState[idx] = false;
+
+      triggerChimeSound(440 + idx * 80);
+
+      const flame = document.getElementById(`flame-${idx}`);
+      const smoke = document.getElementById(`smoke-${idx}`);
+
+      if (flame) {
+        flame.classList.remove('flame-active');
+        flame.style.display = 'none';
+      }
+      if (smoke) {
+        smoke.classList.remove('hidden');
+        smoke.classList.add('smoke-puff');
+      }
+
+      if (candleLitState.every(s => s === false)) {
+        celebrateAllCandlesBlown();
+      }
+    }
+
+    function blowAllCandlesAction() {
+      blowIndividualCandle(0);
+      blowIndividualCandle(1);
+      blowIndividualCandle(2);
+    }
+
+    function celebrateAllCandlesBlown() {
+      const msg = document.getElementById('candleStatusMsg');
+      const btn = document.getElementById('blowCandlesBtn');
+      
+      if (msg) {
+        msg.textContent = "✨ Wish sent! Endless blessings traveling from Kanniyakumari to Chennai! 💖";
+        msg.className = "text-xs sm:text-sm font-bold text-rose-600 mt-4";
+      }
+      if (btn) {
+        btn.textContent = "🎉 Wishes Sent to Chennai!";
+        btn.classList.add('opacity-50', 'pointer-events-none');
+      }
+
+      launchConfettiBurst();
+      triggerChimeSound(659.25);
+    }
+
+    /* ==========================================================================
+       5. CONFETTI BURST
+       ========================================================================== */
+    function launchConfettiBurst() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 85,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ['#fb7185', '#f43f5e', '#fda4af', '#fde047', '#f472b6', '#ffffff']
+        });
+        setTimeout(() => {
+          confetti({
+            particleCount: 45,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#fecdd3', '#fb7185', '#fde047']
+          });
+          confetti({
+            particleCount: 45,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#f43f5e', '#fda4af', '#ffffff']
+          });
+        }, 250);
+      }
+    }
+
+    /* ==========================================================================
+       6. 'OPEN WHEN...' 4 LETTERS DATA (EXACT VERBATIM TEXT)
+       ========================================================================== */
+    const lettersCollection = [
+      {
+        emoji: "🌧️",
+        badge: "Letter from Sal",
+        title: "Open When You're Sad",
+        content: `
+          <p class="font-semibold text-rose-600">Hey Sarvesh,</p>
+          <p>If today feels heavy, please remember that you don't have to have everything figured out. Take a breath, drink some water, and give yourself the kindness you give other people.</p>
+          <p>One bad day doesn't define you, and you never have to pretend to be okay around me. Even from Kanniyakumari, I'm cheering for you in Chennai. I'm only a message away.</p>
+          <p class="font-hand text-2xl text-rose-500 pt-2">Your friend, sal</p>
+        `
+      },
+      {
+        emoji: "🫂",
+        badge: "Letter from Sal",
+        title: "Open When You Miss Me",
+        content: `
+          <p class="font-semibold text-rose-600">Dear Sarvesh,</p>
+          <p>Chennai to Kanniyakumari isn't the biggest distance in the world, but I know it can still feel far sometimes.</p>
+          <p>Until we meet again, keep our random chats, silly jokes, and little memories close. Imagine me waving dramatically from here. Distance can keep us in different places, but it can't erase a good friendship. Sending you the biggest virtual hug!</p>
+          <p class="font-hand text-2xl text-rose-500 pt-2">Your friend sal,</p>
+        `
+      },
+      {
+        emoji: "⚡",
+        badge: "Letter from Sal",
+        title: "Open When You Need Motivation",
+        content: `
+          <p class="font-semibold text-rose-600">Sarvesh, listen up!</p>
+          <p>You've made it through difficult days before, and you can make it through this one too. You don't need to do everything perfectly; just take the next small step. Rest when you need to, try again when you're ready, and don't underestimate what you're capable of.</p>
+          <p>Your future has so many possibilities. I'm rooting for you, always. Now go show the world what you've got! 💪</p>
+          <p class="font-hand text-2xl text-rose-500 pt-2">- Your friend sal</p>
+        `
+      },
+      {
+        emoji: "😊",
+        badge: "Letter from Sal",
+        title: "Open When You Want to Smile",
+        content: `
+          <p class="font-semibold text-rose-600">Emergency smile dispatch for you!</p>
+          <p>Remember all our chaotic moments, late-night deep talks, and all the times we laughed until our stomachs hurt? Look at our goofy pictures on this page!</p>
+          <p>You have the brightest smile, and no amount of distance can take our bond away. Keep shining, birthday boy!</p>
+          <p class="font-hand text-2xl text-rose-500 pt-2">Always smiling with you, sal 💖</p>
+        `
+      }
+    ];
+
+    function openEnvelopeLetter(idx) {
+      triggerChimeSound(587.33);
+      const letter = lettersCollection[idx];
+      if (!letter) return;
+
+      document.getElementById('letterModalEmoji').textContent = letter.emoji;
+      document.getElementById('letterModalBadge').textContent = letter.badge;
+      document.getElementById('letterModalHeading').textContent = letter.title;
+      document.getElementById('letterModalContent').innerHTML = letter.content;
+
+      const modal = document.getElementById('letterReadingModal');
+      const container = document.getElementById('letterModalContainer');
+      modal.classList.remove('hidden');
+
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        container.classList.remove('scale-95');
+        container.classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeEnvelopeLetter() {
+      const modal = document.getElementById('letterReadingModal');
+      const container = document.getElementById('letterModalContainer');
+      modal.classList.add('opacity-0');
+      container.classList.remove('scale-100');
+      container.classList.add('scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    /* ==========================================================================
+       7. IMAGE LIGHTBOX MODAL
+       ========================================================================== */
+    function openLightbox(src, title, subtitle) {
+      triggerChimeSound(520);
+      const modal = document.getElementById('imageLightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const titleEl = document.getElementById('lightboxTitle');
+      const subEl = document.getElementById('lightboxSubtitle');
+
+      img.src = src;
+      titleEl.textContent = title;
+      subEl.textContent = subtitle;
+
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 10);
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('imageLightboxModal');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    /* ==========================================================================
+       8. FRIENDSHIP QUIZ: HOW WELL DO YOU KNOW US?
+       ========================================================================== */
+    const quizItems = [
+      {
+        question: "1. Who started talking first? Me or you? 👀",
+        options: [
+          "Sal took the initiative! 😇",
+          "Sarvesh started it, no doubt! 😎",
+          "We both clashed in chaos simultaneously 😂"
+        ],
+        feedback: "Haha! Regardless of who sent that first hello, it was the start of the greatest friendship ever!"
+      },
+      {
+        question: "2. What's our funniest memory? 😂",
+        options: [
+          "The non-stop laughing fits over dumb things",
+          "Surviving college lectures and sharing notes",
+          "Every single time we mercilessly roast each other"
+        ],
+        feedback: "Honestly, ALL THREE! Every single hangout or phone call turns into a comedy special!"
+      },
+      {
+        question: "3. Who is more dramatic? 😂 Me or you?",
+        options: [
+          "Sarvesh Anand! (Undisputed Drama King 👑)",
+          "Salvia Placid! (I admit it 😇)",
+          "Both of us belong in a Tamil cinema blockbuster"
+        ],
+        feedback: "Hahaha, you know it's you Sarvesh! But our matching chaotic drama is why we get along so well!"
+      }
+    ];
+
+    let currentQuestionIdx = 0;
+    let friendshipScore = 0;
+    let questionAnswered = false;
+
+    function renderCurrentQuiz() {
+      questionAnswered = false;
+      const q = quizItems[currentQuestionIdx];
+      document.getElementById('quizQuestionCount').textContent = `Question ${currentQuestionIdx + 1} of 3`;
+      document.getElementById('quizScoreCount').textContent = `Friendship Score: ${friendshipScore}`;
+      document.getElementById('quizTitle').textContent = q.question;
+
+      const progressPercent = ((currentQuestionIdx + 1) / quizItems.length) * 100;
+      document.getElementById('quizProgressFill').style.width = `${progressPercent}%`;
+
+      const optionsBox = document.getElementById('quizOptionsList');
+      optionsBox.innerHTML = '';
+
+      q.options.forEach((optText, i) => {
+        const btn = document.createElement('button');
+        btn.className = "w-full text-left p-4 rounded-2xl bg-white hover:bg-rose-50 transition border border-rose-200 text-xs sm:text-sm text-slate-800 flex items-center justify-between shadow-sm";
+        btn.innerHTML = `<span>${optText}</span><span class="text-xs text-rose-500 font-bold font-mono">#${i + 1}</span>`;
+        btn.onclick = () => selectQuizAnswer(btn, q.feedback);
+        optionsBox.appendChild(btn);
+      });
+
+      document.getElementById('quizResponseBox').classList.add('hidden');
+      document.getElementById('quizAdvanceBtn').classList.add('hidden');
+    }
+
+    function selectQuizAnswer(buttonEl, feedbackText) {
+      if (questionAnswered) return;
+      questionAnswered = true;
+      friendshipScore += 100;
+      triggerChimeSound(620);
+
+      document.getElementById('quizScoreCount').textContent = `Friendship Score: ${friendshipScore}`;
+      buttonEl.classList.add('!bg-rose-100', '!border-rose-400', 'font-bold');
+
+      const responseBox = document.getElementById('quizResponseBox');
+      responseBox.className = "mt-5 p-4 rounded-2xl text-xs sm:text-sm font-medium bg-rose-100 text-rose-800 border border-rose-200";
+      responseBox.innerHTML = `✨ <strong>Sal's Reaction:</strong> ${feedbackText}`;
+      responseBox.classList.remove('hidden');
+
+      const nextBtn = document.getElementById('quizAdvanceBtn');
+      nextBtn.classList.remove('hidden');
+      if (currentQuestionIdx === quizItems.length - 1) {
+        nextBtn.textContent = "Unlock Friendship Trophy 🏆";
+      }
+    }
+
+    function nextQuizStep() {
+      if (currentQuestionIdx < quizItems.length - 1) {
+        currentQuestionIdx++;
+        renderCurrentQuiz();
+      } else {
+        document.getElementById('quizContainer').classList.add('hidden');
+        document.getElementById('quizCompletionScreen').classList.remove('hidden');
+        launchConfettiBurst();
+      }
+    }
+
+    /* ==========================================================================
+       9. INTERACTIVE CANVAS SCRATCH CARD
+       ========================================================================== */
+    function setupScratchCard() {
+      const canvas = document.getElementById('scratchCanvasSurface');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
+
+      // Rose-gold glitter gradient
+      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      gradient.addColorStop(0, '#fde68a');
+      gradient.addColorStop(0.3, '#f472b6');
+      gradient.addColorStop(0.7, '#fb7185');
+      gradient.addColorStop(1, '#fbcfe8');
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 15px "Outfit", sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('✨ SCRATCH WITH FINGER OR MOUSE ✨', canvas.width / 2, canvas.height / 2 - 12);
+
+      ctx.fillStyle = '#ffe4e6';
+      ctx.font = '600 12px "Outfit", sans-serif';
+      ctx.fillText('🎁 Special Birthday Voucher for Sarvesh', canvas.width / 2, canvas.height / 2 + 15);
+
+      let isDrawing = false;
+      let cardCleared = false;
+
+      function scratchAtPoint(x, y) {
+        ctx.globalCompositeOperation = 'destination-out';
+        ctx.beginPath();
+        ctx.arc(x, y, 26, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (!cardCleared && Math.random() > 0.6) {
+          evaluateScratchProgress();
+        }
+      }
+
+      function evaluateScratchProgress() {
+        try {
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          let clearPixels = 0;
+          const totalChecks = imgData.data.length / 16;
+          for (let i = 3; i < imgData.data.length; i += 16) {
+            if (imgData.data[i] === 0) clearPixels++;
+          }
+          const percentage = (clearPixels / totalChecks) * 100;
+          if (percentage > 45) {
+            cardCleared = true;
+            canvas.style.transition = 'opacity 0.6s ease';
+            canvas.style.opacity = '0';
+            setTimeout(() => {
+              canvas.style.display = 'none';
+              launchConfettiBurst();
+              triggerChimeSound(698.46);
+            }, 600);
+          }
+        } catch(e) {}
+      }
+
+      function getTouchCoordinates(e) {
+        const rect = canvas.getBoundingClientRect();
+        let posX = e.clientX;
+        let posY = e.clientY;
+
+        if (e.touches && e.touches.length > 0) {
+          posX = e.touches[0].clientX;
+          posY = e.touches[0].clientY;
+        }
+
+        return {
+          x: posX - rect.left,
+          y: posY - rect.top
+        };
+      }
+
+      canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true;
+        const coords = getTouchCoordinates(e);
+        scratchAtPoint(coords.x, coords.y);
+      });
+      window.addEventListener('mouseup', () => { isDrawing = false; });
+      canvas.addEventListener('mousemove', (e) => {
+        if (!isDrawing) return;
+        const coords = getTouchCoordinates(e);
+        scratchAtPoint(coords.x, coords.y);
+      });
+
+      canvas.addEventListener('touchstart', (e) => {
+        isDrawing = true;
+        const coords = getTouchCoordinates(e);
+        scratchAtPoint(coords.x, coords.y);
+      }, { passive: true });
+      window.addEventListener('touchend', () => { isDrawing = false; });
+      canvas.addEventListener('touchmove', (e) => {
+        if (!isDrawing) return;
+        const coords = getTouchCoordinates(e);
+        scratchAtPoint(coords.x, coords.y);
+      }, { passive: true });
+    }
+
+    /* ==========================================================================
+       10. INITIALIZATION LIFECYCLE
+       ========================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      generateFloatingHearts();
+      renderCurrentQuiz();
+      setTimeout(setupScratchCard, 350);
+
+      // Welcome celebration
+      setTimeout(() => {
+        launchConfettiBurst();
+      }, 600);
+    });
+
+    window.addEventListener('resize', () => {
+      const canvas = document.getElementById('scratchCanvasSurface');
+      if (canvas && canvas.style.display !== 'none') {
+        setupScratchCard();
+      }
+    });
+  </script>
+</body>
+</html>
